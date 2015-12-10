@@ -18,7 +18,7 @@ var bio = {
 		"Analytics Workshops & On-site Training"
 	],
 	"biopic": "images/zjc.jpg"
-}
+};
 
 /* bio.display
 ----------------------------------- */
@@ -52,18 +52,13 @@ bio.display = function(){
 
 	if (bio.skills.length > 0) {
 		$("#header").append(HTMLskillsStart);
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-		$("#skills").append(formattedSkill);
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-		$("#skills").append(formattedSkill);
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-		$("#skills").append(formattedSkill);
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-		$("#skills").append(formattedSkill);
+		for (var i in bio.skills) {
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+			$("#skills").append(formattedSkills);
+		}
 	}
 }
-$("#header").append(bio.display);
-
+bio.display();
 
 /* WORK
 ----------------------------------- */
@@ -84,12 +79,12 @@ var work = {
 			"description": "Content Marketing platform for product companies. I was in charge of internal operations inlcluding online advertising and web analytics. I was responsible for creating dashboards and reporting to our team."
 		}
 	]
-}
+};
 
 /* work.display
 ----------------------------------- */
 work.display = function() {
-	for (job in work.jobs) {
+	for (var job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -105,7 +100,7 @@ work.display = function() {
 		$(".work-entry:last").append(formattedDescription);
 	}
 }
-$("#workExperience").append(work.display);
+work.display();
 
 
 /* PROJECTS
@@ -122,13 +117,13 @@ var projects = {
 		"description": "Portfolio site to display my Udacity projects using HTML, CSS, JavaScript, JSON and jQuery",
 		"images": ["images/portfolio.png", "images/portfolio2.png"]
 	}]
-}
+};
 
 /* projects.display
 ----------------------------------- */
 projects.display = function() {
 	// display code goes here
-	for (project in projects.projects) {
+	for (var project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
 
 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
@@ -149,7 +144,7 @@ projects.display = function() {
 		}
 	}
 }
-$("#projects").append(projects.display);
+projects.display();
 
 
 /* EDUCATION
@@ -183,12 +178,12 @@ var education = {
 		"date": 2016,
 		"url": "http://www.udacity.com/nanodegree"
 	}]
-}
+};
 
 /* education.display
 ----------------------------------- */
 education.display = function() {
-	for (school in education.schools) {
+	for (var school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 
 		var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
@@ -206,7 +201,7 @@ education.display = function() {
 		$(".education-entry:last").append(formattedMajor);
 	}
 }
-$("#education").append(education.display);
+education.display();
 
 
 /* MAP

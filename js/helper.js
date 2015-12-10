@@ -109,7 +109,9 @@ function initializeMap() {
   var locations;
 
   var mapOptions = {
-    disableDefaultUI: true
+    disableDefaultUI: true,
+    scrollwheel: false, // Disables scrollwheel zooming on the map
+    zoomControl: true, // Enables zoom control
   };
 
   /*
@@ -163,6 +165,7 @@ function initializeMap() {
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
+      animation: google.maps.Animation.DROP, // Animate the Marker
       title: name
     });
 
@@ -176,6 +179,7 @@ function initializeMap() {
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
+      infoWindow.open(map,marker);
     });
 
     // this is where the pin actually gets added to the map.

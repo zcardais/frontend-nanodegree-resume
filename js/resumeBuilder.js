@@ -10,12 +10,12 @@ var bio = {
 		"twitter": "@zeffective",
 		"location": "Charlotte, NC"
 	},
-	"welcomeMessage": "Welcome to my online resume site. This is a JavaScript-heavy site that I coded in November and December of 2015. Thanks for visiting.",
+	"welcomeMessage": "Thanks for visiting my online resume site, a project that I completed in December 2015 to illustrate my proficiency in JavaScript and jQuery, both very useful in my line of work as a data scientist and web analytics expert. Everything you see on this page was coded in JavaScript and jQuery. Get in touch if you want to talk to me about analytics for your business.",
 	"skills": [
 		"Google Analytics",
-		"Programming",
-		"Workshops and Training",
-		"Web Analytics"
+		"Web Analytics",
+		"Data Science",
+		"Analytics Workshops & On-site Training"
 	],
 	"biopic": "images/zjc.jpg"
 }
